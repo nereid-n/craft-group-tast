@@ -1,0 +1,75 @@
+@font-face 
+	font-family: 'Arial black'
+	src: url('../fonts/6426.ttf')
+
+$active: #efe70e
+
+body 
+	margin: 0
+
+.container
+	@extend .flex
+	background:
+		image: url(../images/FX.jpg)
+		repeat: no-repeat
+		size: 100% 100%
+	height: 100%
+	width: 100%
+	min-width: 768px
+	max-width: 1920px
+	position: absolute
+
+.block
+	&:hover .text
+		color: $active
+	@extend .flex
+	width: 42%
+	height: 30%
+	transform: skewX(-12deg)
+
+.active
+	opacity: 0
+
+.img
+	img
+		transform: skewX(12deg)
+		position: absolute
+		width: 110%
+	@extend .flex
+	position: absolute
+	overflow: hidden
+	width: 100%
+	height: 100%
+	vertical-align: middle
+	top: 0
+	left: 0
+
+.text
+	@extend .flex
+	width: 50%
+	height: 100%
+	font-family: 'Arial Black'
+	transform: skewX(12deg)
+	position: absolute
+	color: grey
+	transition: color 1s
+	top: 0
+	p
+		margin: 0
+		width: 100%
+
+.bord
+	height: 100%
+	width: 100%
+	border: 5px solid yellow
+	opacity: 0
+	box-sizing: border-box
+	position: absolute
+
+.flex
+	display: flex
+	justify-content: center
+	align-items: center
+
+@import adaptive
+@import ie10+
